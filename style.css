@@ -62,6 +62,36 @@ h1 {
   background: #3182ce;
 }
 
+.filters {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 1.25rem;
+}
+
+.filter-btn {
+  background: #edf2f7;
+  border: none;
+  border-radius: 8px;
+  color: #4a5568;
+  cursor: pointer;
+  flex: 1;
+  font-size: 0.9rem;
+  padding: 0.5rem 0.75rem;
+}
+
+.filter-btn:hover {
+  background: #e2e8f0;
+}
+
+.filter-btn.active {
+  background: #4299e1;
+  color: #fff;
+}
+
+.filter-btn.active:hover {
+  background: #3182ce;
+}
+
 #task-list {
   list-style: none;
 }
@@ -72,6 +102,10 @@ h1 {
   display: flex;
   gap: 0.75rem;
   padding: 0.75rem 0;
+}
+
+.task-item.hidden-by-filter {
+  display: none !important;
 }
 
 .task-item:last-child {
