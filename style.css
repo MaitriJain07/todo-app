@@ -11,6 +11,7 @@ body {
   display: flex;
   justify-content: center;
   padding: 2rem 1rem;
+  transition: background 0.2s ease;
 }
 
 .app {
@@ -20,13 +21,35 @@ body {
   width: 100%;
   max-width: 480px;
   padding: 2rem;
+  transition: background 0.2s ease, box-shadow 0.2s ease;
+}
+
+.header {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 1.5rem;
 }
 
 h1 {
   color: #1a202c;
   font-size: 1.75rem;
-  margin-bottom: 1.5rem;
-  text-align: center;
+  transition: color 0.2s ease;
+}
+
+#theme-toggle {
+  background: #edf2f7;
+  border: none;
+  border-radius: 8px;
+  color: #4a5568;
+  cursor: pointer;
+  font-size: 0.85rem;
+  padding: 0.5rem 0.75rem;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+#theme-toggle:hover {
+  background: #e2e8f0;
 }
 
 #add-form {
@@ -37,10 +60,13 @@ h1 {
 
 #task-input {
   flex: 1;
+  background: #fff;
   border: 2px solid #e2e8f0;
   border-radius: 8px;
+  color: #1a202c;
   font-size: 1rem;
   padding: 0.6rem 0.75rem;
+  transition: border-color 0.2s ease, background 0.2s ease, color 0.2s ease;
 }
 
 #task-input:focus {
@@ -72,6 +98,7 @@ h1 {
   display: flex;
   gap: 0.75rem;
   padding: 0.75rem 0;
+  transition: border-color 0.2s ease;
 }
 
 .task-item:last-child {
@@ -86,8 +113,10 @@ h1 {
 
 .task-text {
   flex: 1;
+  color: #1a202c;
   font-size: 1rem;
   word-break: break-word;
+  transition: color 0.2s ease;
 }
 
 .task-item.completed .task-text {
@@ -113,4 +142,53 @@ h1 {
   font-size: 0.95rem;
   padding: 1rem 0;
   text-align: center;
+}
+
+/* Dark mode */
+body.dark-mode {
+  background: #1a202c;
+}
+
+body.dark-mode .app {
+  background: #2d3748;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+body.dark-mode h1 {
+  color: #f7fafc;
+}
+
+body.dark-mode #theme-toggle {
+  background: #4a5568;
+  color: #e2e8f0;
+}
+
+body.dark-mode #theme-toggle:hover {
+  background: #718096;
+}
+
+body.dark-mode #task-input {
+  background: #1a202c;
+  border-color: #4a5568;
+  color: #f7fafc;
+}
+
+body.dark-mode #task-input::placeholder {
+  color: #718096;
+}
+
+body.dark-mode .task-item {
+  border-bottom-color: #4a5568;
+}
+
+body.dark-mode .task-text {
+  color: #e2e8f0;
+}
+
+body.dark-mode .task-item.completed .task-text {
+  color: #718096;
+}
+
+body.dark-mode .empty-message {
+  color: #718096;
 }
